@@ -133,6 +133,7 @@ class news_list(View):
         subcategory_id = request.GET.get('subcategory', None)
 
         news_posts = News.objects.all()
+        
 
         if query:
             news_posts = news_posts.filter(Q(title__icontains=query) | Q(content__icontains=query))
